@@ -1,4 +1,6 @@
+from functools import reduce
 import random
+
 choice = ["h", "t"]
 ht_list = []
 
@@ -18,3 +20,25 @@ for c in ht_list:
 
 print("Heads:", len(h_list))
 print("Tails:", len(t_list))
+
+# Map uses
+one_to_10 = range(1, 11)
+
+
+def dbl_num(num):
+    return num * 2
+
+
+print("MAP")
+print(list(map(dbl_num, one_to_10)))
+
+# Filter uses
+print("FILTER")
+
+rand_list = list(random.randint(1, 1000) for i in range(100))
+print(list(filter((lambda x: x % 9 == 0),
+                  rand_list)))
+
+# Reduce use
+print("REDUCE")
+print(reduce((lambda x, y: x + y), range(1, 6)))
