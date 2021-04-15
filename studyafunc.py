@@ -35,9 +35,12 @@ print(list(map(dbl_num, one_to_10)))
 # Filter uses
 print("FILTER")
 
-rand_list = list(random.randint(1, 1000) for i in range(100))
+rand_list = list(random.randint(1, 1001) for i in range(100))
 print(list(filter((lambda x: x % 9 == 0),
                   rand_list)))
+print("EVEN FILTER TRY")
+even_list_try = list(range(1, 11))
+print(list(filter((lambda x: x % 2 == 0), even_list_try)))
 
 # Reduce use
 print("REDUCE")
