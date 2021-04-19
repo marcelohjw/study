@@ -1,0 +1,1 @@
+print("Here i study list of comprehensions")
