@@ -2,5 +2,7 @@ import re
 
 print('This is the final lesson from regular expression')
 
-if re.search("ape", "The ape was at the apex"):
-    print("There is an ape")
+all_apes = re.findall("ape", "The ape was in the apex")
+
+for i in all_apes:
+    print(i)
