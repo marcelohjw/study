@@ -28,3 +28,12 @@ print(rand_str2)
 regex = re.compile("\n")
 rand_str2 = regex.sub(" ", rand_str2)
 print(rand_str2)
+
+numb_str = "123456"
+print("Matches :", len(re.findall("\d", numb_str)))
+
+ph_numb = "412-555-76232"
+if re.search("\w{3}-\w{3}-\w{4}", ph_numb):
+    print("It is a phone number")
+else:
+    print("It's a code")
