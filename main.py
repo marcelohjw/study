@@ -37,3 +37,7 @@ if re.search("\w{3}-\w{3}-\w{4}", ph_numb):
     print("It is a phone number")
 else:
     print("It's a code")
+
+email_list = "db@aol.com m@.com @apple.com db@.com"
+
+print("Email Matches :", len(re.findall("[\w. %+-]{1,20}@[\w.-]{2,20}.[A-Za-z]{2,3}", email_list)))
