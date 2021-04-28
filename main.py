@@ -43,3 +43,18 @@ email_list = "db@aol.com m@.com @apple.com db@.com"
 print("Email Matches :", len(re.findall("[\w. %+-]{1,20}@[\w.-]{2,20}.[A-Za-z]{2,3}", email_list)))
 
 print("Multiple desktops testing...")
+
+print("=========================")
+print("Lesson 3 ")
+
+long_rand_str = """Hello Once
+Hello Two
+Hello three
+"""
+
+print("Matches :", len(re.findall(r"[\w\s]+[\r]?[\n]", long_rand_str)))
+
+matches = re.findall("[\w\s]+[\r]?[\n]", long_rand_str)
+
+for i in matches:
+    print(i)
