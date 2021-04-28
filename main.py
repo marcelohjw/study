@@ -58,3 +58,14 @@ matches = re.findall("[\w\s]+[\r]?[\n]", long_rand_str)
 
 for i in matches:
     print(i)
+
+print("=========================")
+print("Lesson 4 ")
+
+string_7 = "Matchs everything up to @"
+
+regex = re.compile(r"^.*[^@]") # Tudo do início da string com espaços exceto o @
+matxs = re.findall(regex, string_7)
+
+for u in matxs:
+    print(u)
