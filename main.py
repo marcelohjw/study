@@ -79,3 +79,10 @@ matches = re.findall(regex, cat_str)
 print("Number of  Matches : ", len(matches))
 for x in matches:
     print(x)
+
+print(" ")
+phone_number = "Two Two Three Four"
+regex = re.compile(r"\w+(?=\b)")
+matches = re.findall(regex, phone_number)
+for m in matches:
+    print(m)
