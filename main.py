@@ -69,3 +69,13 @@ matxs = re.findall(regex, string_7)
 
 for u in matxs:
     print(u)
+
+print("=========================")
+print("Lesson 5 ")
+
+cat_str = "The cat cat fell out of the window."
+regex = re.compile(r"(\b\w+)\s\1")
+matches = re.findall(regex, cat_str)
+print("Number of  Matches : ", len(matches))
+for x in matches:
+    print(x)
