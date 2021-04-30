@@ -97,3 +97,11 @@ matches = re.findall(regex, animals_str)
 print("Animals Matches:", len(matches))
 for r in matches:
     print(r)
+
+challenge_str = "12345 12345-1234 1234 12346-333"
+regex = re.compile(r"(\d{5}-\d{4}|\d{5}\s)")
+natches = re.findall(regex, challenge_str)
+
+print("Numbery matches:", len(natches))
+for n in natches:
+    print(n)
