@@ -86,3 +86,14 @@ regex = re.compile(r"\w+(?=\b)")
 matches = re.findall(regex, phone_number)
 for m in matches:
     print(m)
+
+print("=========================")
+print("Lesson 6 FINAL")
+
+animals_str = "1. Dog 2. Cat 3. Turtle"
+regex = re.compile(r"\d\.\s(Dog|Cat)")
+
+matches = re.findall(regex, animals_str)
+print("Animals Matches:", len(matches))
+for r in matches:
+    print(r)
