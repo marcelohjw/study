@@ -19,3 +19,11 @@ def create_students(how_many):
 
 
 create_students(10)
+
+def create_tes_scores(num_tests, num_studs):
+    for i in range(1, num_tests + 1):
+        for j in range(1, num_studs + 1):
+            score = random.randrange(1, 25)
+            print(f"INSERT INTO test_score VALUES ({j}, {i}, {score});")
+
+create_tes_scores(4, 10)
