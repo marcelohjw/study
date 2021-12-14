@@ -2,10 +2,10 @@ import sqlite3
 import sys
 import csv
 
-
 db_conn = sqlite3.connect('test.db')
 print("Database created")
 the_cursor = db_conn.cursor()
+
 
 def print_db():
     try:
@@ -23,20 +23,18 @@ def print_db():
     except:
         print("Couldn't retrieve the information")
 
+
 try:
-    db_conn.execute("""CREATE TABLE employees(ID INT PRIMARY KEY AUTOINCREMENT NOT NULL, f_name TEXT NOT NULL, l_name 
+    db_conn.execute("""CREATE TABLE employees(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, f_name TEXT NOT NULL, l_name 
                     TEXT NOT NULL, age INT NOT NULL, address TEXT, salary REAL, hire_data TEXT);""")
     db_conn.commit()
     print("Table created")
 except sqlite3.OperationalError as e:
     print("Table couldn't be created", str(e))
 
-
-
-db_conn.execute(""""INSERT INTO employees(f_name, l_name, age, address, salary, hire_data) VALUES ('Derek', 'Banas', 
+db_conn.execute("""INSERT INTO employees(f_name, l_name, age, address, salary, hire_data) VALUES ('Derek', 'Banas', 
 43, '123 Main St', 500000, date('now'));""")
 print("Employee Entered")
-
 
 try:
     db_conn.execute("UPDATE employees SET address = '121 Main St' WHERE ID = 1")
@@ -79,6 +77,7 @@ with db_conn:
     db_conn.row_factory = sqlite3.Row
     the_cursor = db_conn.cursor()
     the_cursor.execute("SELECT * FROM employees")
+    rows = the_cursor.fetchall()
     for row in rows:
         print("{}{}".format(row["f_name"], row["l_name"]))
 
