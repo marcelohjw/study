@@ -28,8 +28,8 @@ try:
                     TEXT NOT NULL, age INT NOT NULL, address TEXT, salary REAL, hire_data TEXT);""")
     db_conn.commit()
     print("Table created")
-except sqlite3.OperationalError:
-    print("Table couldn't be created")
+except sqlite3.OperationalError as e:
+    print("Table couldn't be created", str(e))
 
 
 
